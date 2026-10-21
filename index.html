@@ -4,8 +4,45 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b0e11">
-<title>AI Cap — AI Model Leaderboard</title>
+<meta name="description" content="Compare AI models by Elo rankings, pricing, speed, usage, and benchmark scores. Explore recent releases, compare model specs, and find the best value for your workload.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AI Cap">
+<meta property="og:title" content="AI Cap | AI Model Rankings, Pricing &amp; Benchmarks">
+<meta property="og:description" content="Compare AI models by Elo rankings, pricing, speed, usage, and benchmark scores. Explore recent releases, compare model specs, and find the best value for your workload.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AI Cap | AI Model Rankings, Pricing &amp; Benchmarks">
+<meta name="twitter:description" content="Compare AI models by Elo rankings, pricing, speed, usage, and benchmark scores. Explore recent releases, compare model specs, and find the best value for your workload.">
+<title>AI Cap | AI Model Rankings, Pricing &amp; Benchmarks</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b0e11'/%3E%3Cpath d='M13 49V36h9v13m5 0V27h9v22m5 0V18h9v31' fill='%2316c784'/%3E%3Cpath d='m12 29 13-9 9 4 18-14' fill='none' stroke='%23f0b90b' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "AI Cap",
+      "description": "An AI model leaderboard for comparing model rankings, pricing, speed, usage, and benchmark scores.",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "WebApplication",
+      "name": "AI Cap AI Model Leaderboard",
+      "applicationCategory": "AI model comparison",
+      "operatingSystem": "Any",
+      "isAccessibleForFree": true,
+      "description": "Compare AI models by Elo rankings, pricing, speed, usage, and benchmark scores. Explore recent releases, compare model specs, and find the best value for your workload.",
+      "featureList": [
+        "AI model rankings by Elo score",
+        "Model pricing and usage comparisons",
+        "Model speed and benchmark comparisons",
+        "Model comparison, watchlist, and value calculator"
+      ],
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
 <style>
   *,*::before,*::after{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
@@ -37,7 +74,9 @@
   .chip.active{background:#1a2740;border-color:#2f6fed;color:#8ab4ff}
   .hero{margin:12px 12px 4px;padding:14px 14px 12px;border-radius:16px;background:linear-gradient(155deg,#151b23,#0e1217 65%);border:1px solid #1e2329;position:relative;overflow:hidden}
   .hero::after{content:'';position:absolute;top:-70px;right:-50px;width:190px;height:190px;background:radial-gradient(circle,rgba(47,111,237,.28),transparent 70%);pointer-events:none}
-  .hero-label{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:#6b7684;font-weight:700}
+  .hero-label{margin:0;font-size:17px;font-weight:750;color:#eaecef}
+  .hero-kicker{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:#6b7684;font-weight:700}
+  .hero-desc{max-width:620px;margin:6px 0 0;font-size:11.5px;color:#9aa4b2;line-height:1.45}
   .hero-val{display:flex;align-items:baseline;gap:9px;margin-top:5px}
   .hero-val span:first-child{font-size:27px;font-weight:800;letter-spacing:-.6px;font-variant-numeric:tabular-nums}
   .hero-val .chg{font-size:13.5px;font-weight:700;font-variant-numeric:tabular-nums}
@@ -327,7 +366,9 @@
   <main>
     <section class="panel" id="panel-rankings">
       <section class="hero">
-        <span class="hero-label">AI Cap Composite Index</span>
+        <span class="hero-kicker">AI Cap Composite Index</span>
+        <h1 class="hero-label">AI Model Leaderboard</h1>
+        <p class="hero-desc">Compare model Elo scores, pricing, usage, speed, and benchmark results. Data may be live or simulated; source notes identify demo metrics.</p>
         <div class="hero-val"><span id="idxVal">0.00</span><span class="chg" id="idxChg">+0.00%</span></div>
         <div class="hero-sub">Elo-weighted average · top <span id="idxCount">25</span> models · 24h</div>
         <div class="hero-spark" id="heroSpark"></div>
