@@ -65,7 +65,7 @@
   .live.sim{color:#f0b90b;background:rgba(240,185,11,.1);border:1px solid rgba(240,185,11,.25)}
   .live.live{color:#16c784;background:rgba(22,199,132,.1);border:1px solid rgba(22,199,132,.22)}
   .live.cached{color:#8ab4ff;background:rgba(47,111,237,.1);border:1px solid rgba(47,111,237,.25)}
-  .live.syncing{color:#9aa4b2;background:rgba(154,164,178,.1);border:1px solid rgba(154,164,178,.2)}
+  .live.syncing{color:#16c784;background:rgba(22,199,132,.1);border:1px solid rgba(22,199,132,.3)}
   .live i{width:6px;height:6px;border-radius:50%;background:currentColor;animation:pulse 1.8s infinite}
   @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 currentColor}50%{opacity:.55;box-shadow:0 0 0 4px transparent}}
   .search{position:relative;display:flex;align-items:center}
@@ -359,7 +359,7 @@
   <header class="topbar">
     <div class="hrow">
       <div class="brand"><div class="mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20v-6h4v6m3 0V9h4v11m3 0V4h4v16" fill="#16c784"/><path d="m3 10 6-4 4 2 8-6" fill="none" stroke="#f0b90b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="bname">AI<b>Cap</b></div></div>
-      <span class="live sim" id="statusPill"><i></i>Simulated</span>
+      <span class="live syncing" id="statusPill" aria-live="polite" aria-atomic="true"><i></i>Syncing</span>
     </div>
     <div class="search" id="searchBox">
       <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>
