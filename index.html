@@ -4,16 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b0e11">
-<meta name="description" content="Compare AI models by Elo rankings, pricing, speed, usage, and benchmark scores. Explore recent releases, compare model specs, and find the best value for your workload.">
+<meta name="description" content="Compare AI model rankings, per-million-token prices, usage, speed, and benchmarks. Filter open and proprietary models, compare specs, and estimate workload costs.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AI Cap">
+<meta property="og:url" content="https://marketcapsi.com/">
 <meta property="og:title" content="AI Cap | AI Model Rankings, Pricing &amp; Benchmarks">
-<meta property="og:description" content="Compare AI models by Elo rankings, pricing, speed, usage, and benchmark scores. Explore recent releases, compare model specs, and find the best value for your workload.">
+<meta property="og:description" content="Compare AI model rankings, per-million-token prices, usage, speed, and benchmarks. Filter open and proprietary models, compare specs, and estimate workload costs.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AI Cap | AI Model Rankings, Pricing &amp; Benchmarks">
-<meta name="twitter:description" content="Compare AI models by Elo rankings, pricing, speed, usage, and benchmark scores. Explore recent releases, compare model specs, and find the best value for your workload.">
-<title>AI Cap | AI Model Rankings, Pricing &amp; Benchmarks</title>
+<meta name="twitter:description" content="Compare AI model rankings, per-million-token prices, usage, speed, and benchmarks. Filter open and proprietary models, compare specs, and estimate workload costs.">
+<title>AI Model Rankings, Pricing &amp; Benchmarks | AI Cap</title>
+<link rel="canonical" href="https://marketcapsi.com/">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b0e11'/%3E%3Cpath d='M13 49V36h9v13m5 0V27h9v22m5 0V18h9v31' fill='%2316c784'/%3E%3Cpath d='m12 29 13-9 9 4 18-14' fill='none' stroke='%23f0b90b' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <script type="application/ld+json">
 {
@@ -22,21 +24,24 @@
     {
       "@type": "WebSite",
       "name": "AI Cap",
-      "description": "An AI model leaderboard for comparing model rankings, pricing, speed, usage, and benchmark scores.",
+      "url": "https://marketcapsi.com/",
+      "description": "An AI model leaderboard for comparing model Elo rankings, per-million-token prices, usage, speed, and benchmark scores. Some ranking and benchmark values are simulated demo data.",
       "inLanguage": "en"
     },
     {
       "@type": "WebApplication",
       "name": "AI Cap AI Model Leaderboard",
+      "url": "https://marketcapsi.com/",
       "applicationCategory": "AI model comparison",
       "operatingSystem": "Any",
       "isAccessibleForFree": true,
-      "description": "Compare AI models by Elo rankings, pricing, speed, usage, and benchmark scores. Explore recent releases, compare model specs, and find the best value for your workload.",
+      "description": "Compare AI model rankings, per-million-token prices, usage, speed, and benchmarks. Filter open and proprietary models, compare specs, and estimate workload costs. Some ranking and benchmark values are simulated demo data.",
       "featureList": [
-        "AI model rankings by Elo score",
-        "Model pricing and usage comparisons",
-        "Model speed and benchmark comparisons",
-        "Model comparison, watchlist, and value calculator"
+        "AI model rankings by demo Elo score",
+        "Input and output pricing per million tokens",
+        "Model usage, inference speed, and benchmark comparisons",
+        "Open-weight and proprietary model filters",
+        "Model comparison, watchlist, alerts, and workload cost calculator"
       ],
       "inLanguage": "en"
     }
@@ -77,6 +82,13 @@
   .hero-label{margin:0;font-size:17px;font-weight:750;color:#eaecef}
   .hero-kicker{display:block;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:#6b7684;font-weight:700}
   .hero-desc{max-width:620px;margin:6px 0 0;font-size:11.5px;color:#9aa4b2;line-height:1.45}
+  .seo-guide{grid-column:1/-1;margin:24px 0 8px;padding:18px 0 4px;border-top:1px solid #1b2027}
+  .seo-guide h2{margin:0;font-size:16px;font-weight:750}
+  .seo-guide-intro{max-width:760px;margin:6px 0 16px;color:#9aa4b2;font-size:12px;line-height:1.55}
+  .seo-faq{display:grid;gap:14px}
+  .seo-faq h3{margin:0 0 4px;font-size:12px;font-weight:700;color:#eaecef}
+  .seo-faq p{margin:0;color:#8b95a3;font-size:11.5px;line-height:1.55}
+  .seo-guide a{color:#8ab4ff;text-decoration:none}
   .hero-val{display:flex;align-items:baseline;gap:9px;margin-top:5px}
   .hero-val span:first-child{font-size:27px;font-weight:800;letter-spacing:-.6px;font-variant-numeric:tabular-nums}
   .hero-val .chg{font-size:13.5px;font-weight:700;font-variant-numeric:tabular-nums}
@@ -402,6 +414,29 @@
         <span></span>
       </div>
       <div id="list" class="list"></div>
+
+      <section class="seo-guide" aria-labelledby="seo-guide-title">
+        <h2 id="seo-guide-title">How to compare AI models</h2>
+        <p class="seo-guide-intro">AI Cap brings model rankings, API costs, usage, speed, and benchmark results into one comparison. Use the filters to narrow the list, compare model specifications, or estimate token costs for your workload.</p>
+        <div class="seo-faq">
+          <article>
+            <h3>What can I compare between AI models?</h3>
+            <p>Compare provider, context window, license, demo Elo score, input and output price per million tokens, reported usage, response speed, and available benchmark results. Filter open-weight and proprietary models or select models for a side-by-side comparison.</p>
+          </article>
+          <article>
+            <h3>Are the AI rankings and metrics live?</h3>
+            <p>The Elo rankings and some benchmark values are simulated demo data, not a live voting leaderboard. When available, API pricing and usage are fetched from OpenRouter, speed data comes from llm-bench-data, and selected benchmark results are matched from Artificial Analysis data through ai-model-index. The status label and source notes show whether data is live, cached, or simulated.</p>
+          </article>
+          <article>
+            <h3>How do I estimate AI API costs?</h3>
+            <p>Enter expected monthly input and output token volumes in the value calculator. It estimates cost from each model's per-million-token rates and compares estimated cost with the demo Elo score. Provider pricing can change, so verify current rates with the provider before budgeting.</p>
+          </article>
+          <article>
+            <h3>Which AI model is best for my workload?</h3>
+            <p>There is no single best model for every use case. Compare quality indicators, benchmark coverage, context window, license, latency, and estimated cost against your requirements. Treat simulated scores as illustrative, not as a substitute for testing models on your own tasks.</p>
+          </article>
+        </div>
+      </section>
     </section>
 
     <section class="panel hidden" id="panel-compare">
