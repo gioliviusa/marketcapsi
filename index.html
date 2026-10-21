@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b0e11">
 <title>AI Cap — AI Model Leaderboard</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b0e11'/%3E%3Cpath d='M13 49V36h9v13m5 0V27h9v22m5 0V18h9v31' fill='%2316c784'/%3E%3Cpath d='m12 29 13-9 9 4 18-14' fill='none' stroke='%23f0b90b' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <style>
   *,*::before,*::after{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
@@ -14,7 +15,8 @@
   .topbar{position:sticky;top:0;z-index:30;background:rgba(11,14,17,.88);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid #1b2027;padding:calc(9px + env(safe-area-inset-top)) 12px 10px}
   .hrow{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
   .brand{display:flex;align-items:center;gap:8px}
-  .mark{width:27px;height:27px;border-radius:9px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);display:grid;place-items:center;font-size:11px;font-weight:800;letter-spacing:-.5px;color:#fff;box-shadow:0 2px 12px rgba(99,102,241,.4)}
+  .mark{width:29px;height:29px;border-radius:8px;background:#151b23;border:1px solid #27323d;display:grid;place-items:center;flex:0 0 auto}
+  .mark svg{width:19px;height:19px;display:block}
   .bname{font-size:16.5px;font-weight:800;letter-spacing:-.4px}
   .bname b{color:#6b7684}
   .live{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 9px;border-radius:999px;transition:.2s}
@@ -222,18 +224,18 @@
   .tab[data-panel="alerts"]{position:relative}
   .tab[data-panel="alerts"].active{color:#f0b90b}
 
-  .donate{margin:16px 12px 6px;padding:14px;border-radius:16px;background:linear-gradient(155deg,#151b23,#0e1217 65%);border:1px solid #1e2329;position:relative;overflow:hidden}
+  .donate{margin:10px 12px 4px;padding:10px 12px;border-radius:10px;background:linear-gradient(155deg,#151b23,#0e1217 65%);border:1px solid #1e2329;position:relative;overflow:hidden}
   .donate::after{content:'';position:absolute;top:-60px;right:-40px;width:160px;height:160px;background:radial-gradient(circle,rgba(240,185,11,.18),transparent 70%);pointer-events:none}
-  .donate-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-  .donate-icon{width:28px;height:28px;border-radius:9px;display:grid;place-items:center;background:rgba(240,185,11,.12);color:#f0b90b;font-size:14px;font-weight:800}
+  .donate-head{display:flex;align-items:center;gap:8px;margin-bottom:0}
+  .donate-icon{width:24px;height:24px;border-radius:7px;display:grid;place-items:center;background:rgba(240,185,11,.12);color:#f0b90b;font-size:13px;font-weight:800}
   .donate-title{font-size:12.5px;font-weight:750}
   .donate-sub{font-size:10.5px;color:#6b7684;margin-top:2px}
-  .wallet{display:flex;align-items:center;gap:8px;margin-top:10px;background:#0e1217;border:1px solid #1e2329;border-radius:11px;padding:10px 12px}
-  .wallet code{flex:1;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11.5px;color:#cfd6de;word-break:break-all;line-height:1.3}
+  .wallet{display:flex;align-items:center;gap:8px;margin-top:7px;background:#0e1217;border:1px solid #1e2329;border-radius:8px;padding:7px 9px}
+  .wallet code{flex:1;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:10.5px;color:#cfd6de;word-break:break-all;line-height:1.3}
   .copybtn{flex:0 0 auto;background:#1f2937;border:1px solid #2a323c;color:#eaecef;font:inherit;font-size:11px;font-weight:650;padding:6px 11px;border-radius:8px;cursor:pointer;transition:.15s;white-space:nowrap}
   .copybtn:active{background:#2a323c}
   .copybtn.ok{background:rgba(22,199,132,.15);border-color:rgba(22,199,132,.4);color:#16c784}
-  .donate-note{margin-top:8px;font-size:10px;color:#5d6774;line-height:1.4}
+  .donate-note{margin:6px 0 0;font-size:9.5px;color:#5d6774;line-height:1.35}
   .donate-note b{color:#8b95a3;font-weight:600}
   .toast{position:fixed;left:50%;bottom:calc(80px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(12px);background:#1f2937;color:#eaecef;border:1px solid #2a323c;padding:9px 16px;border-radius:10px;font-size:12px;font-weight:600;z-index:100;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;box-shadow:0 6px 20px rgba(0,0,0,.5);max-width:calc(100% - 40px);text-align:center}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
@@ -292,6 +294,10 @@
     .scatter-wrap{margin-left:24px;margin-right:24px;padding:16px}
     .scatter-legend{padding-left:24px;padding-right:24px}
     .calc-header,.calc-row{grid-template-columns:44px minmax(0,1fr) 140px;gap:16px;padding-left:24px;padding-right:24px}
+    .donate{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1.2fr);align-items:center;gap:0 14px;margin:14px 24px 6px;padding:10px 14px}
+    .wallet{min-width:0;margin:0}
+    .wallet code{font-size:10px}
+    .donate-note{grid-column:1/-1;margin-top:5px}
     .foot{padding-top:24px}
   }
 </style>
@@ -301,7 +307,7 @@
 <div class="app">
   <header class="topbar">
     <div class="hrow">
-      <div class="brand"><div class="mark">AI</div><div class="bname">AI<b>Cap</b></div></div>
+      <div class="brand"><div class="mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20v-6h4v6m3 0V9h4v11m3 0V4h4v16" fill="#16c784"/><path d="m3 10 6-4 4 2 8-6" fill="none" stroke="#f0b90b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="bname">AI<b>Cap</b></div></div>
       <span class="live sim" id="statusPill"><i></i>Simulated</span>
     </div>
     <div class="search" id="searchBox">
